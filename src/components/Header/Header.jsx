@@ -37,7 +37,7 @@ function Header() {
         },
     ]
   return (
-    <header className="flex items-center bg-white shadow-2xl">
+    <header className="flex items-center bg-white shadow-2xl sticky top-0">
         <Container>
             <nav className="flex items-center py-2">
                 <div className="mr-4 max-sm:mr-3">
