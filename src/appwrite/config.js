@@ -15,6 +15,7 @@ export class Service {
     async getPost(slug) {
         // slug --- document id 
         try {
+            console.log("inside getPost()");
             return await this.databases.getDocument(conf.appwriteDatabaseId, conf.appwriteCollectionId, slug);
         } catch (error) {
             console.log("Appwrite service :: getPost() :: ", error);
@@ -32,7 +33,9 @@ export class Service {
     }
 
     async createPost({title, slug, content, featuredImage, status, userId}) {
+        console.log("creating post");
         try {
+            console.log("creating document...");
             return await this.databases.createDocument(conf.appwriteDatabaseId, conf.appwriteCollectionId, slug, {
                 title, content, featuredImage, status, userId 
             })
